@@ -13,8 +13,10 @@ public class UserRegistration {
 	                case 1:
 	                    UserRegistrationOptions.firstName();
 	                    break;
-	              }
-	            
+                        case 2:
+	                    UserRegistrationOptions.lastName();
+	                    break;
+	             }
 	        }
 	    }
 	}
@@ -42,4 +44,21 @@ public class UserRegistration {
 }
 
 
+   //UC-2
+  public static void lastName() {
+	        while (true) {
+	            System.out.println("Enter lastName : ");
+	            text = input.next();
+	            Pattern pattern = Pattern.compile(lastName);
+	            Matcher matcher = pattern.matcher(text);
+	            if (matcher.matches()) {
+	                System.out.println("Valid pattern");
+	                break;
+	            }
+                    else {
+	                System.out.println("Invalid Pattern,Try Again");
+	                System.out.println(" ");
+	            }
+	       }
 
+}
