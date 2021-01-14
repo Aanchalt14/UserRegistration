@@ -16,9 +16,14 @@ public class UserRegistration {
 	                case 2:
 	                    UserRegistrationOptions.lastName();
 	                    break;
-	                case 3:
+ 	                case 3:
 	                    UserRegistrationOptions.email();
 	                    break;
+ 	                case 4:
+ 	                	UserRegistrationOptions.mobile();
+ 	               case 5:
+ 	                    UserRegistrationOptions.password();
+ 	                    break;
 	            }
 	            
 	        }
@@ -31,7 +36,8 @@ public class UserRegistration {
 	    static String firstName = "^[A-Z][a-zA-Z]{2,}$";
 	    static String lastName = "^[A-Z][a-zA-Z]{2,}$";
 	    static String email = "^[0-9a-zA-Z]+([.\\-_+][0-9a-zA-Z]+)*@[a-z0-9A-Z]+.[a-z]{2,4}([.][a-zA-Z]{2,})*$";
-
+	    static String mobile = "^91[ ][6-9][0-9]{9}$";
+	    static String password = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$";
 	    public static void firstName() {
 	        while (true) {
 	            System.out.println("Enter FirstName : ");
@@ -44,10 +50,10 @@ public class UserRegistration {
 	            } else {
 	                System.out.println("Invalid firstName Pattern,Try Again");
 	                System.out.println(" ");
-	            }
+	            }            }
 	        }
 
-	    }
+	    
 
 	    public static void lastName() {
 	        while (true) {
@@ -62,9 +68,10 @@ public class UserRegistration {
 	                System.out.println("Invalid Pattern,Try Again");
 	                System.out.println(" ");
 	            }
-	        }
 
+	        }
 	    }
+	    
 
 	    public static void email() {
 	        while (true) {
@@ -80,7 +87,39 @@ public class UserRegistration {
 	            System.out.println(" ");
 	        }
 	    }
+
+	    
+	    public static void mobile() {
+	        while (true) {
+	            System.out.println("Enter Mobile number : ");
+	            text = input.next();
+	            Pattern pattern = Pattern.compile(mobile);
+	            Matcher matcher = pattern.matcher(text);
+	            if (matcher.matches()) {
+	                System.out.println("Valid pattern");
+	                break;
+	            } else {
+	                System.out.println("Invalid Pattern,Try Again");
+	                System.out.println(" ");
+	            }
+
+	        }
+	    }
+	 	    
+	 public static void password() {
+	        while (true) {
+	            System.out.println("Enter password with minimum 8 characters  : ");
+	            text = input.nextLine();
+	            Pattern pattern = Pattern.compile(password);
+	            Matcher matcher = pattern.matcher(text);
+	            if (matcher.matches()) {
+	                System.out.println("Valid pattern");
+	                break;
+	            } else
+	                System.out.println("Invalid pattern , Try Again");
+
+	        }
+
+	    }
+
 	}
-
-
-
